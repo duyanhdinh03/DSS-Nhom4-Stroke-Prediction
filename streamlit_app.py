@@ -5,7 +5,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.svm import SVC
 
 # read in data
-df = pd.read_csv('V:/processed_data.csv')
+df = pd.read_csv('./processed_data.csv')
 
 
 # Check for and drop any missing values
