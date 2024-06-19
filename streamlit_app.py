@@ -38,15 +38,15 @@ with st.form("stroke_form"):
     st.markdown('<p style="color:#8b0000; font-size: 36px;"><b>Stroke Prediction Quiz</b></p>', unsafe_allow_html=True)
     '##### Answer the questions below to determine your potential risk of experiencing a stroke.'
 
-    age = st.number_input('What is your age?', min_value=0)
+    age = st.number_input('Tuổi của bạn :', min_value=0)
     average_glucose = st.number_input('What is your average glucose level?', min_value=0.0)
-    bmi = st.number_input('What is your BMI?', min_value=0.0)
-    gender = st.selectbox('What is your gender?', ['Female', 'Male'])
-    ever_married = st.selectbox('Have you ever been married?', ['No', 'Yes'])
-    work_type = st.selectbox('What is your work type?', ['Never worked', 'Private', 'Self-employed', 'Children', 'Government'])
+    bmi = st.number_input('Chỉ số BMI', min_value=0.0)
+    gender = st.selectbox('Giới tính', ['Female', 'Male'])
+    ever_married = st.selectbox('Đã kết hôn chưa ?', ['No', 'Yes'])
+    work_type = st.selectbox('Tình trạng nghề nghiệp :', ['Never worked', 'Private', 'Self-employed', 'Children', 'Government'])
     residence_type = st.selectbox('Do you live in an urban or rural area?', ['Rural', 'Urban'])
-    smoking_status = st.selectbox('Do you smoke?', ['Never smoked', 'Formerly smoked', 'Smokes'])
-    age_group = st.selectbox('What is your age group?', ['Adult', 'Senior', 'Teen', 'Toddler'])
+    smoking_status = st.selectbox('Tần suất hút thuốc :', ['Never smoked', 'Formerly smoked', 'Smokes'])
+    age_group = st.selectbox('Nhóm tuổi của bạn :', ['Adult', 'Senior', 'Teen', 'Toddler'])
 
     submitted = st.form_submit_button("Submit")
     if submitted:
@@ -80,4 +80,4 @@ with st.form("stroke_form"):
         prediction_prob = model.predict_proba(user_data_scaled)[0, 1]  # Probability of having a stroke
 
         '### Prediction:'
-        st.write(f'You have a {prediction_prob * 100:.2f}% probability of having a stroke.')
+        st.write(f'You have a {prediction_prob * 100:.1f}% probability of having a stroke.')
