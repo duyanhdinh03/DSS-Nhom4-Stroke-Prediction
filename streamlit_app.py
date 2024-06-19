@@ -80,4 +80,4 @@ with st.form("stroke_form"):
         prediction_prob = model.predict_proba(user_data_scaled)[0, 1]  # Probability of having a stroke
 
         '### Prediction:'
-        st.write(f'You have a {prediction_prob * 10:.2f}% probability of having a stroke.')
+        st.write(f'You have a {prediction_prob * 1000:.2f}% probability of having a stroke.')
